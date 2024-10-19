@@ -12,7 +12,7 @@ https://www.tooplate.com/view/2137-barista-cafe
 :root {
   --white-color:                  #ffffff;
   --primary-color:                #BC6C25;
-  --secondary-color:              #DDA15E;
+  --secondary-color: #958070;
   --section-bg-color:             #b78752;
   --custom-btn-bg-color:          #BC6C25;
   --custom-btn-bg-hover-color:    #DDA15E;
@@ -601,7 +601,7 @@ strong {
   ABOUT              
 -----------------------------------------*/
 .about-section {
-  background-color: var(--secondary-color);
+  background-color: #5d5751;
   position: relative;
 }
 
@@ -623,7 +623,7 @@ strong {
 }
 
 .about-video-info {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(188, 108, 37, 1));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgb(34 34 33));
   border-radius: var(--border-radius-medium);
   bottom: 0;
   height: auto;
@@ -1196,5 +1196,6 @@ strong {
   .timeline-container-right::before {
     top: 13px;
   }
+
 }
 
