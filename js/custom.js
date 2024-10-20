@@ -38,7 +38,7 @@
             }, 300);
         }
     });
-    var words = ['Happy Ending', 'Đức Hòa - Mỹ Hoa'],
+    var words = ['Happy Wedding', 'Đức Hòa - Mỹ Hoa'],
         part,
         i = 0,
         offset = 0,
@@ -81,6 +81,7 @@
 
     $(document).ready(function () {
         wordflick();
+
     });
 })(window.jQuery);
 

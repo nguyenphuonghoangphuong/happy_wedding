@@ -24,6 +24,9 @@
     <link href="css/vegas.min.css" rel="stylesheet">
 
     <link href="css/tooplate-barista.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css" rel="stylesheet"/>
+
 
     <!--
 
@@ -36,24 +39,60 @@
     -->
 </head>
 <style>
+    .custom-image {
+        width: 300px;
+        height: 500px;
+    }
+
     @media only screen and (max-width: 1000px) {
-        .introduce{
-            display: none!important;
+        .introduce {
+            display: none !important;
         }
+
+        .menu-section {
+            background-image: url('./images/anh-cuoi-6.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center; /* Centers the image */
+            width: 100%;
+        }
+    }
+
+    .swiper {
+        width: 100%;
+        height: 100%;
+    }
+
+    .swiper-slide {
+        text-align: center;
+        font-size: 18px;
+        background: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .swiper-slide img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
     }
 </style>
 <body>
-
 <main>
-                    <nav class="navbar navbar-expand-lg">
-                        <div class="container">
-                            <a class="navbar-brand d-flex align-items-center w-100 justify-content-center" href="index.html">
-                                <img src="images/icon/Amitjakhu-Drip-Heart.512.png" class="navbar-brand-image img-fluid" alt="thienpt">
-                                <div class="word p-1"></div>
-                                <img src="images/icon/Amitjakhu-Drip-Heart.512.png" class="navbar-brand-image img-fluid" alt="thienpt">
-                            </a>
-                        </div>
-                    </nav>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center w-100 justify-content-center" href="index.html">
+                <img src="images/icon/Amitjakhu-Drip-Heart.512.png" class="navbar-brand-image img-fluid" alt="thienpt">
+                <div class="word p-1"></div>
+                <img src="images/icon/Amitjakhu-Drip-Heart.512.png" class="navbar-brand-image img-fluid" alt="thienpt">
+            </a>
+        </div>
+    </nav>
+    <audio id="audioPlayer" controls style="display:none" autoplay muted>
+        <source src="mp3/BeautifulInWhite-Chipmunk-3126588.mp3" type="audio/mp3">
+    </audio>
     <section class="hero-section d-flex justify-content-center align-items-center" id="section_1">
 
         <div class="container">
@@ -63,7 +102,7 @@
                     <em class="small-text">Hê lô</em>
                     <h1>Đức Hòa - Mỹ Hoa</h1>
                     <p class="text-white mb-4 pb-lg-2">
-                        <em>Happy ending</em>
+                        <em>Happy Wedding</em>
                     </p>
                 </div>
             </div>
@@ -82,6 +121,7 @@
                         <div class="about-video-info d-flex flex-column">
                             <h4 class="mt-auto">Vũ Đức Hòa</h4>
                             <h4>1996</h4>
+                            <em class="text-white">"Good boy hiền lành tốt bụng , yêu vợ số 1"</em>
                         </div>
                     </div>
                 </div>
@@ -116,539 +156,262 @@
                         <div class="about-video-info d-flex flex-column">
                             <h4 class="mt-auto">Lê Thị Mỹ Hoa</h4>
                             <h4>2001</h4>
+                            <em class="text-white">"Hot Girl, hướng nội , công dung ngôn hạnh"</em>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-<!--    <section class="barista-section section-padding section-bg" id="barista-team">-->
-<!--        <div class="container">-->
-<!--            <div class="row justify-content-center">-->
-
-<!--                <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">-->
-<!--                    <em class="text-white">Creative Baristas</em>-->
-
-<!--                    <h2 class="text-white">Meet People</h2>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-3 col-md-6 col-12 mb-4">-->
-<!--                    <div class="team-block-wrap">-->
-<!--                        <div class="team-block-info d-flex flex-column">-->
-<!--                            <div class="d-flex mt-auto mb-3">-->
-<!--                                <h4 class="text-white mb-0">Steve</h4>-->
-
-<!--                                <p class="badge ms-4"><em>Boss</em></p>-->
-<!--                            </div>-->
-
-<!--                            <p class="text-white mb-0">your favourite coffee daily lives tempor.</p>-->
-<!--                        </div>-->
-
-<!--                        <div class="team-block-image-wrap">-->
-<!--                            <img src="images/team/portrait-elegant-old-man-wearing-suit.jpg"-->
-<!--                                 class="team-block-image img-fluid" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-3 col-md-6 col-12 mb-4">-->
-<!--                    <div class="team-block-wrap">-->
-<!--                        <div class="team-block-info d-flex flex-column">-->
-<!--                            <div class="d-flex mt-auto mb-3">-->
-<!--                                <h4 class="text-white mb-0">Sandra</h4>-->
-
-<!--                                <p class="badge ms-4"><em>Manager</em></p>-->
-<!--                            </div>-->
-
-<!--                            <p class="text-white mb-0">your favourite coffee daily lives.</p>-->
-<!--                        </div>-->
-
-<!--                        <div class="team-block-image-wrap">-->
-<!--                            <img src="images/team/cute-korean-barista-girl-pouring-coffee-prepare-filter-batch-brew-pour-working-cafe.jpg"-->
-<!--                                 class="team-block-image img-fluid" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-3 col-md-6 col-12 mb-4">-->
-<!--                    <div class="team-block-wrap">-->
-<!--                        <div class="team-block-info d-flex flex-column">-->
-<!--                            <div class="d-flex mt-auto mb-3">-->
-<!--                                <h4 class="text-white mb-0">Jackson</h4>-->
-
-<!--                                <p class="badge ms-4"><em>Senior</em></p>-->
-<!--                            </div>-->
-
-<!--                            <p class="text-white mb-0">your favourite coffee daily lives.</p>-->
-<!--                        </div>-->
-
-<!--                        <div class="team-block-image-wrap">-->
-<!--                            <img src="images/team/small-business-owner-drinking-coffee.jpg"-->
-<!--                                 class="team-block-image img-fluid" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-3 col-md-6 col-12">-->
-<!--                    <div class="team-block-wrap">-->
-<!--                        <div class="team-block-info d-flex flex-column">-->
-<!--                            <div class="d-flex mt-auto mb-3">-->
-<!--                                <h4 class="text-white mb-0">Michelle</h4>-->
-
-<!--                                <p class="badge ms-4"><em>Barista</em></p>-->
-<!--                            </div>-->
-
-<!--                            <p class="text-white mb-0">your favourite coffee daily consectetur.</p>-->
-<!--                        </div>-->
-
-<!--                        <div class="team-block-image-wrap">-->
-<!--                            <img src="images/team/smiley-business-woman-working-cashier.jpg"-->
-<!--                                 class="team-block-image img-fluid" alt="">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-
-<!--    <section class="menu-section section-padding" id="section_3">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-
-<!--                <div class="col-lg-6 col-12 mb-4 mb-lg-0">-->
-<!--                    <div class="menu-block-wrap">-->
-<!--                        <div class="text-center mb-4 pb-lg-2">-->
-<!--                            <em class="text-white">Delicious Menu</em>-->
-<!--                            <h4 class="text-white">Breakfast</h4>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Pancakes</h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$12.50</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Fresh brewed coffee and steamed milk</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block my-4">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>-->
-<!--                                    Toasted Waffle-->
-<!--                                </h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="text-white ms-auto">-->
-<!--                                    <del>$16.50</del>-->
-<!--                                </strong>-->
-
-<!--                                <strong class="ms-2">$12.00</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Brewed coffee and steamed milk</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Fried Chips-->
-<!--                                    <span class="badge ms-3">Recommend</span>-->
-<!--                                </h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$15.0</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Rich Milk and Foam</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block my-4">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Pancakes</h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$12.50</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Fresh brewed coffee and steamed milk</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Banana Cakes</h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$18.0</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Rich Milk and Foam</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-6 col-12">-->
-<!--                    <div class="menu-block-wrap">-->
-<!--                        <div class="text-center mb-4 pb-lg-2">-->
-<!--                            <em class="text-white">Favourite Menu</em>-->
-<!--                            <h4 class="text-white">Coffee</h4>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Latte</h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="text-white ms-auto">-->
-<!--                                    <del>$12.50</del>-->
-<!--                                </strong>-->
-
-<!--                                <strong class="ms-2">$7.50</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Fresh brewed coffee and steamed milk</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block my-4">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>-->
-<!--                                    White Coffee-->
-<!--                                    <span class="badge ms-3">Recommend</span>-->
-<!--                                </h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$5.90</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Brewed coffee and steamed milk</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Chocolate Milk</h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$5.50</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Rich Milk and Foam</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block my-4">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Greentea</h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$7.50</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Fresh brewed coffee and steamed milk</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="menu-block">-->
-<!--                            <div class="d-flex">-->
-<!--                                <h6>Dark Chocolate</h6>-->
-
-<!--                                <span class="underline"></span>-->
-
-<!--                                <strong class="ms-auto">$7.25</strong>-->
-<!--                            </div>-->
-
-<!--                            <div class="border-top mt-2 pt-2">-->
-<!--                                <small>Rich Milk and Foam</small>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-
-<!--    <section class="reviews-section section-padding section-bg" id="section_4">-->
-<!--        <div class="container">-->
-<!--            <div class="row justify-content-center">-->
-
-<!--                <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">-->
-<!--                    <em class="text-white">Reviews by Customers</em>-->
-
-<!--                    <h2 class="text-white">Testimonials</h2>-->
-<!--                </div>-->
-
-<!--                <div class="timeline">-->
-<!--                    <div class="timeline-container timeline-container-left">-->
-<!--                        <div class="timeline-content">-->
-<!--                            <div class="reviews-block">-->
-<!--                                <div class="reviews-block-image-wrap d-flex align-items-center">-->
-<!--                                    <img src="images/reviews/young-woman-with-round-glasses-yellow-sweater.jpg"-->
-<!--                                         class="reviews-block-image img-fluid" alt="">-->
-
-<!--                                    <div class="">-->
-<!--                                        <h6 class="text-white mb-0">Sandra</h6>-->
-<!--                                        <em class="text-white"> Customers</em>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="reviews-block-info">-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor-->
-<!--                                        incididunt ut labore et dolore magna aliqua.</p>-->
-
-<!--                                    <div class="d-flex border-top pt-3 mt-4">-->
-<!--                                        <strong class="text-white">4.5 <small class="ms-2">Rating</small></strong>-->
-
-<!--                                        <div class="reviews-group ms-auto">-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star"></i>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="timeline-container timeline-container-right">-->
-<!--                        <div class="timeline-content">-->
-<!--                            <div class="reviews-block">-->
-<!--                                <div class="reviews-block-image-wrap d-flex align-items-center">-->
-<!--                                    <img src="images/reviews/senior-man-white-sweater-eyeglasses.jpg"-->
-<!--                                         class="reviews-block-image img-fluid" alt="">-->
-
-<!--                                    <div class="">-->
-<!--                                        <h6 class="text-white mb-0">Don</h6>-->
-<!--                                        <em class="text-white"> Customers</em>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="reviews-block-info">-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor-->
-<!--                                        incididunt ut labore et dolore magna aliqua.</p>-->
-
-<!--                                    <div class="d-flex border-top pt-3 mt-4">-->
-<!--                                        <strong class="text-white">4.5 <small class="ms-2">Rating</small></strong>-->
-
-<!--                                        <div class="reviews-group ms-auto">-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star"></i>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-
-<!--                    <div class="timeline-container timeline-container-left">-->
-<!--                        <div class="timeline-content">-->
-<!--                            <div class="reviews-block">-->
-<!--                                <div class="reviews-block-image-wrap d-flex align-items-center">-->
-<!--                                    <img src="images/reviews/young-beautiful-woman-pink-warm-sweater-natural-look-smiling-portrait-isolated-long-hair.jpg"-->
-<!--                                         class="reviews-block-image img-fluid" alt="">-->
-
-<!--                                    <div class="">-->
-<!--                                        <h6 class="text-white mb-0">Olivia</h6>-->
-<!--                                        <em class="text-white"> Customers</em>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-
-<!--                                <div class="reviews-block-info">-->
-<!--                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor-->
-<!--                                        incididunt ut labore et dolore magna aliqua.</p>-->
-
-<!--                                    <div class="d-flex border-top pt-3 mt-4">-->
-<!--                                        <strong class="text-white">4.5 <small class="ms-2">Rating</small></strong>-->
-
-<!--                                        <div class="reviews-group ms-auto">-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star-fill"></i>-->
-<!--                                            <i class="bi-star"></i>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
-
-<!--    <section class="contact-section section-padding" id="section_5">-->
-<!--        <div class="container">-->
-<!--            <div class="row">-->
-
-<!--                <div class="col-lg-12 col-12">-->
-<!--                    <em class="text-white">Say Hello</em>-->
-<!--                    <h2 class="text-white mb-4 pb-lg-2">Contact</h2>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-6 col-12">-->
-<!--                    <form action="#" method="post" class="custom-form contact-form" role="form">-->
-
-<!--                        <div class="row">-->
-
-<!--                            <div class="col-lg-6 col-12">-->
-<!--                                <label for="name" class="form-label">Name <sup class="text-danger">*</sup></label>-->
-
-<!--                                <input type="text" name="name" id="name" class="form-control" placeholder="Jackson"-->
-<!--                                       required="">-->
-<!--                            </div>-->
-
-<!--                            <div class="col-lg-6 col-12">-->
-<!--                                <label for="email" class="form-label">Email Address</label>-->
-
-<!--                                <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*" class="form-control"-->
-<!--                                       placeholder="Jack@gmail.com" required="">-->
-<!--                            </div>-->
-
-<!--                            <div class="col-12">-->
-<!--                                <label for="message" class="form-label">How can we help?</label>-->
-
-<!--                                <textarea name="message" rows="4" class="form-control" id="message"-->
-<!--                                          placeholder="Message" required=""></textarea>-->
-
-<!--                            </div>-->
-<!--                        </div>-->
-
-<!--                        <div class="col-lg-5 col-12 mx-auto mt-3">-->
-<!--                            <button type="submit" class="form-control">Send Message</button>-->
-<!--                        </div>-->
-<!--                    </form>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-6 col-12 mx-auto mt-5 mt-lg-0 ps-lg-5">-->
-<!--                    <iframe class="google-map"-->
-<!--                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5039.668141741662!2d72.81814769288509!3d19.043340656729775!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7c994f34a7355%3A0x2680d63a6f7e33c2!2sLover%20Point!5e1!3m2!1sen!2sth!4v1692722771770!5m2!1sen!2sth"-->
-<!--                            width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"-->
-<!--                            referrerpolicy="no-referrer-when-downgrade"></iframe>-->
-<!--                </div>-->
-
-<!--            </div>-->
-<!--        </div>-->
-<!--    </section>-->
-
+    <section class="menu-section section-padding" id="section_3">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                    <div class="menu-block-wrap">
+                        <div class="text-center mb-4 pb-lg-2">
+                            <h4 class="text-white">DỰ TIỆC TẠI NHÀ TRAI</h4>
+                        </div>
+
+                        <div class="menu-block">
+                            <div class="d-flex text-center justify-content-center" style="font-family: cursive">
+                                <h6 class="">Xóm 2, Hà Dương <br> Xã Hoàng Nam, Nghĩa Hưng <br>Nam Định</h6>
+                            </div>
+                            <span class="underline"></span>
+                        </div>
+                        <div class="menu-block">
+                            <div class="date-card text-white">
+                                <h6 class="" style="font-family: cursive">Vào lúc 9 giờ sáng</h6>
+                                <div class="date-top">
+                                    <span>Thứ ba</span>
+                                    <span class="date">10/11</span>
+                                    <span>2024</span>
+                                </div>
+                                <p class="lunar-date">Tức ngày 10 tháng 10 năm Giáp Thìn</p>
+                                <a href="https://maps.app.goo.gl/DFPhAvZK8yKEfVRv9" target="_blank">Địa chỉ nhà trai
+                                    trên Google Map</a>
+                            </div>
+                        </div>
+                        <hr style="color: white;">
+                    </div>
+                </div>
+                <div class="col-lg-6 col-12 mb-4 mb-lg-0">
+                    <div class="menu-block-wrap">
+                        <div class="text-center mb-4 pb-lg-2">
+                            <h4 class="text-white">DỰ TIỆC TẠI NHÀ GÁI</h4>
+                        </div>
+
+                        <div class="menu-block">
+                            <div class="d-flex text-center justify-content-center" style="font-family: cursive">
+                                <h6 class="">Xóm Đông An, Nam Dương <br> Xã Hoà Nam, Ứng Hòa<br>Hà Nội</h6>
+                            </div>
+                            <span class="underline"></span>
+                        </div>
+                        <div class="menu-block">
+                            <div class="date-card text-white">
+                                <h6 class="" style="font-family: cursive">Vào lúc 9 giờ sáng</h6>
+                                <div class="date-top">
+                                    <span>Thứ ba</span>
+                                    <span class="date">10/11</span>
+                                    <span>2024</span>
+                                </div>
+                                <p class="lunar-date">Tức ngày 10 tháng 10 năm Giáp Thìn</p>
+                                <a href="https://maps.app.goo.gl/5Pd9jzS2L497Ssg76" target="_blank">Địa chỉ nhà gái trên
+                                    Google Map</a>
+                            </div>
+                        </div>
+                        <hr style="color: white;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="barista-section section-padding section-bg" id="barista-team">
+        <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+            <em class="text-white">Cùng ngắm nhìn</em>
+
+            <h2 class="text-white">Album ảnh cưới</h2>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 1"><img src="images/anh-cuoi-n-1.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 2"><img src="images/anh-cuoi-2.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 3"><img src="images/anh-cuoi-4.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 4"><img src="images/anh-cuoi-5.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 5"><img src="images/anh-cuoi-6.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 6"><img src="images/anh-cuoi-7.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 7"><img src="images/anh-cuoi-8.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image 8"><img src="images/anh-cuoi-chu-re.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
+                             data-title="Image "><img src="images/anh-cuoi-co-dau.jpg" alt=""></div>
+                    </div>
+                    <div class="swiper-pagination"></div>
+                </div>
+                <!--                <div class="gallery">-->
+                <!--                    <a href="images/anh-cuoi-n-1.jpg" data-lightbox="album" data-title="Image 1"><img src="images/anh-cuoi-n-1.jpg" alt="Image 1"></a>-->
+                <!--                    <a href="images/anh-cuoi-n-1.jpg" data-lightbox="album" data-title="Image 2"><img src="images/anh-cuoi-n-1.jpg" alt="Image 2"></a>-->
+                <!--                    <a href="images/anh-cuoi-n-1.jpg" data-lightbox="album" data-title="Image 3"><img src="images/anh-cuoi-n-1.jpg" alt="Image 3"></a>-->
+
+
+                <!--                    &lt;!&ndash; Add more images here &ndash;&gt;-->
+
+                <!--                </div>-->
+            </div>
+
+        </div>
+        </div>
+    </section>
+
+    <section class="contact-section section-padding section-bg" id="section_5">
+        <div class="container">
+            <div class="row justify-content-center">
+
+                <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                    <em class="text-white">Mừng hạnh phúc đôi bạn trẻ</em>
+
+                    <h2 class="text-white">Tại đây</h2>
+                </div>
+
+                <div class="timeline">
+                    <div class="timeline-container timeline-container-left">
+                        <div class="timeline-content">
+                            <div class="reviews-block">
+                                <div class="reviews-block-image-wrap d-flex align-items-center">
+                                    <img src="images/anh-cuoi-chu-re.jpg"
+                                         class="reviews-block-image img-fluid" alt="">
+                                    <div class="">
+                                        <em class="text-white">Nhà trai</em>
+                                        <h6 class="text-white mb-0">Vũ Đức Hòa</h6>
+                                    </div>
+                                </div>
+                                <div class="reviews-block-info">
+                                    <img style="width: 100%" src="images/qr/qr-nha-trai.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="timeline-container timeline-container-right">
+                        <div class="timeline-content">
+                            <div class="reviews-block">
+                                <div class="reviews-block-image-wrap d-flex align-items-center">
+                                    <img src="images/anh-cuoi-co-dau.jpg"
+                                         class="reviews-block-image img-fluid" alt="">
+                                    <div class="">
+                                        <em class="text-white">Nhà gái</em>
+                                        <h6 class="text-white mb-0">Lê Thị Mỹ Hoa</h6>
+                                    </div>
+                                </div>
+
+                                <div class="reviews-block-info">
+                                    <img style="width: 100%" src="images/qr/qr-nha-gai.jpg" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
 
     <footer class="site-footer">
         <div class="container">
             <div class="row">
+                <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
+                    <em class="text-white">Xin chân thành cảm ơn các ông các bà, các anh các chị, bạn bè nam nữ gần xa</em>
 
-                <div class="col-lg-4 col-12 me-auto">
-                    <em class="text-white d-block mb-4">Where to find us?</em>
-
-                    <strong class="text-white">
-                        <i class="bi-geo-alt me-2"></i>
-                        Bandra West, Mumbai, Maharashtra 400050, India
-                    </strong>
-
-                    <ul class="social-icon mt-4">
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-facebook">
-                            </a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="https://x.com/minthu" target="_new" class="social-icon-link bi-twitter">
-                            </a>
-                        </li>
-
-                        <li class="social-icon-item">
-                            <a href="#" class="social-icon-link bi-whatsapp">
-                            </a>
-                        </li>
-                    </ul>
+                    <h4 class="text-white">Đến chung vui với gia đình</h4>
                 </div>
+<!--                <div class="col-lg-4 col-12 me-auto">-->
+<!--                    <em class="text-white d-block mb-4">Where to find us?</em>-->
 
-                <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">
-                    <em class="text-white d-block mb-4">Contact</em>
+<!--                    <strong class="text-white">-->
+<!--                        <i class="bi-geo-alt me-2"></i>-->
+<!--                        Bandra West, Mumbai, Maharashtra 400050, India-->
+<!--                    </strong>-->
 
-                    <p class="d-flex mb-1">
-                        <strong class="me-2">Phone:</strong>
-                        <a href="tel: 305-240-9671" class="site-footer-link">
-                            (65)
-                            305 2409 671
-                        </a>
-                    </p>
+<!--                    <ul class="social-icon mt-4">-->
+<!--                        <li class="social-icon-item">-->
+<!--                            <a href="#" class="social-icon-link bi-facebook">-->
+<!--                            </a>-->
+<!--                        </li>-->
 
-                    <p class="d-flex">
-                        <strong class="me-2">Email:</strong>
+<!--                        <li class="social-icon-item">-->
+<!--                            <a href="https://x.com/minthu" target="_new" class="social-icon-link bi-twitter">-->
+<!--                            </a>-->
+<!--                        </li>-->
 
-                        <a href="mailto:info@yourgmail.com" class="site-footer-link">
-                            hello@barista.co
-                        </a>
-                    </p>
+<!--                        <li class="social-icon-item">-->
+<!--                            <a href="#" class="social-icon-link bi-whatsapp">-->
+<!--                            </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+
+<!--                <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">-->
+<!--                    <em class="text-white d-block mb-4">Contact</em>-->
+
+<!--                    <p class="d-flex mb-1">-->
+<!--                        <strong class="me-2">Phone:</strong>-->
+<!--                        <a href="tel: 305-240-9671" class="site-footer-link">-->
+<!--                            (65)-->
+<!--                            305 2409 671-->
+<!--                        </a>-->
+<!--                    </p>-->
+
+<!--                    <p class="d-flex">-->
+<!--                        <strong class="me-2">Email:</strong>-->
+
+<!--                        <a href="mailto:info@yourgmail.com" class="site-footer-link">-->
+<!--                            hello@barista.co-->
+<!--                        </a>-->
+<!--                    </p>-->
+<!--                </div>-->
+
+
+<!--                <div class="col-lg-5 col-12">-->
+<!--                    <em class="text-white d-block mb-4">Opening Hours.</em>-->
+
+<!--                    <ul class="opening-hours-list">-->
+<!--                        <li class="d-flex">-->
+<!--                            Monday - Friday-->
+<!--                            <span class="underline"></span>-->
+
+<!--                            <strong>9:00 - 18:00</strong>-->
+<!--                        </li>-->
+
+<!--                        <li class="d-flex">-->
+<!--                            Saturday-->
+<!--                            <span class="underline"></span>-->
+
+<!--                            <strong>11:00 - 16:30</strong>-->
+<!--                        </li>-->
+
+<!--                        <li class="d-flex">-->
+<!--                            Sunday-->
+<!--                            <span class="underline"></span>-->
+
+<!--                            <strong>Closed</strong>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+
+                <div class="col-lg-12 col-12 mt-4 text-center">
+                    <p class="copyright-text mb-0">See you again
+                        - Design: <a rel="sponsored" href="https://www.facebook.com/botombotomro" target="_blank">@thienpt</a></p>
                 </div>
-
-
-                <div class="col-lg-5 col-12">
-                    <em class="text-white d-block mb-4">Opening Hours.</em>
-
-                    <ul class="opening-hours-list">
-                        <li class="d-flex">
-                            Monday - Friday
-                            <span class="underline"></span>
-
-                            <strong>9:00 - 18:00</strong>
-                        </li>
-
-                        <li class="d-flex">
-                            Saturday
-                            <span class="underline"></span>
-
-                            <strong>11:00 - 16:30</strong>
-                        </li>
-
-                        <li class="d-flex">
-                            Sunday
-                            <span class="underline"></span>
-
-                            <strong>Closed</strong>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="col-lg-8 col-12 mt-4">
-                    <p class="copyright-text mb-0">Copyright © Barista Cafe 2048
-                        - Design: <a rel="sponsored" href="https://www.tooplate.com" target="_blank">Tooplate</a></p>
-                </div>
-            </div>
+<!--            </div>-->
+        </div>
     </footer>
 </main>
 
@@ -659,6 +422,29 @@
 <script src="js/click-scroll.js"></script>
 <script src="js/vegas.min.js"></script>
 <script src="js/custom.js"></script>
-
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+    var slidesperView;
+    screenWidth = window.innerWidth;
+    slidesperView = (screenWidth < 1000) ? 1 : 3
+    var swiper = new Swiper(".mySwiper", {
+        slidesPerView: slidesperView,
+        spaceBetween: 30,
+        centeredSlides: true,
+        autoplay: {
+            delay: 2500,
+            disableOnInteraction: false,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
 </html>
