@@ -78,6 +78,80 @@
         height: 100%;
         object-fit: cover;
     }
+    /* HTML: <div class="loader"></div> */
+    #heart {
+        cursor: pointer;
+        position: relative;
+        width: 100px;
+        height: 90px;
+        animation: heartbeat 1s infinite;
+        margin:0 auto
+    }
+    #heart:before,
+    #heart:after {
+        position: absolute;
+        content: "";
+        left: 50px;
+        top: 0;
+        width: 50px;
+        height: 80px;
+        background: #fff;
+        -moz-border-radius: 50px 50px 0 0;
+        border-radius: 50px 50px 0 0;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        -webkit-transform-origin: 0 100%;
+        -moz-transform-origin: 0 100%;
+        -ms-transform-origin: 0 100%;
+        -o-transform-origin: 0 100%;
+        transform-origin: 0 100%;
+    }
+    #heart:after {
+        left: 0;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -ms-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transform-origin: 100% 100%;
+        -moz-transform-origin: 100% 100%;
+        -ms-transform-origin: 100% 100%;
+        -o-transform-origin: 100% 100%;
+        transform-origin :100% 100%;
+    }
+
+
+
+    @keyframes heartbeat
+    {
+        0%
+        {
+            transform: scale( .75 );
+        }
+        20%
+        {
+            transform: scale( 1 );
+        }
+        40%
+        {
+            transform: scale( .75 );
+        }
+        60%
+        {
+            transform: scale( 1 );
+        }
+        80%
+        {
+            transform: scale( .75 );
+        }
+        100%
+        {
+            transform: scale( .75 );
+        }
+    }
 </style>
 <body>
 <main>
@@ -99,7 +173,7 @@
             <div class="row align-items-center">
 
                 <div class="col-lg-6 col-12 mx-auto">
-                    <em class="small-text">Hê lô</em>
+                    <em class="small-text">Save The Date</em>
                     <h1>Đức Hòa - Mỹ Hoa</h1>
                     <p class="text-white mb-4 pb-lg-2">
                         <em>Happy Wedding</em>
@@ -182,7 +256,7 @@
                             <div class="date-card text-white">
                                 <h6 class="" style="font-family: cursive">Vào lúc 9 giờ sáng</h6>
                                 <div class="date-top">
-                                    <span>Thứ ba</span>
+                                    <span>Chủ nhật</span>
                                     <span class="date">10/11</span>
                                     <span>2024</span>
                                 </div>
@@ -210,7 +284,7 @@
                             <div class="date-card text-white">
                                 <h6 class="" style="font-family: cursive">Vào lúc 9 giờ sáng</h6>
                                 <div class="date-top">
-                                    <span>Thứ ba</span>
+                                    <span>Chủ nhật</span>
                                     <span class="date">10/11</span>
                                     <span>2024</span>
                                 </div>
@@ -249,10 +323,24 @@
                              data-title="Image 6"><img src="images/anh-cuoi-7.jpg" alt=""></div>
                         <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
                              data-title="Image 7"><img src="images/anh-cuoi-8.jpg" alt=""></div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album" data-title="Image 10">
+                            <img src="images/anh-cuoi-11.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album" data-title="Image 8">
+                            <img src="images/anh-cuoi-9.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album" data-title="Image 9">
+                            <img src="images/anh-cuoi-10.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album" data-title="Image 11">
+                            <img src="images/anh-cuoi-12.jpg" alt="">
+                        </div>
                         <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
-                             data-title="Image 8"><img src="images/anh-cuoi-chu-re.jpg" alt=""></div>
-                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album"
-                             data-title="Image "><img src="images/anh-cuoi-co-dau.jpg" alt=""></div>
+                             data-title="Image 12"><img src="images/anh-cuoi-chu-re.jpg" alt="">
+                        </div>
+                        <div class="swiper-slide custom-image align-items-center" data-lightbox="album" data-title="Image 13">
+                            <img src="images/anh-cuoi-co-dau.jpg" alt="">
+                        </div>
                     </div>
                     <div class="swiper-pagination"></div>
                 </div>
@@ -277,11 +365,12 @@
 
                 <div class="col-lg-12 col-12 text-center mb-4 pb-lg-2">
                     <em class="text-white">Mừng hạnh phúc đôi bạn trẻ</em>
-
                     <h2 class="text-white">Tại đây</h2>
                 </div>
-
-                <div class="timeline">
+                <div class="row justify-content-center">
+                    <div id="heart" onclick="showHideQrCode()"></div>
+                </div>
+                <div class="timeline" id="qrCode" hidden="hidden">
                     <div class="timeline-container timeline-container-left">
                         <div class="timeline-content">
                             <div class="reviews-block">
@@ -313,7 +402,7 @@
                                 </div>
 
                                 <div class="reviews-block-info">
-                                    <img style="width: 100%" src="images/qr/qr-nha-gai.jpg" alt="">
+                                    <img style="width: 100%" src="images/qr/qr-nha-gai.png" alt="">
                                 </div>
                             </div>
                         </div>
@@ -332,85 +421,11 @@
 
                     <h4 class="text-white">Đến chung vui với gia đình</h4>
                 </div>
-<!--                <div class="col-lg-4 col-12 me-auto">-->
-<!--                    <em class="text-white d-block mb-4">Where to find us?</em>-->
-
-<!--                    <strong class="text-white">-->
-<!--                        <i class="bi-geo-alt me-2"></i>-->
-<!--                        Bandra West, Mumbai, Maharashtra 400050, India-->
-<!--                    </strong>-->
-
-<!--                    <ul class="social-icon mt-4">-->
-<!--                        <li class="social-icon-item">-->
-<!--                            <a href="#" class="social-icon-link bi-facebook">-->
-<!--                            </a>-->
-<!--                        </li>-->
-
-<!--                        <li class="social-icon-item">-->
-<!--                            <a href="https://x.com/minthu" target="_new" class="social-icon-link bi-twitter">-->
-<!--                            </a>-->
-<!--                        </li>-->
-
-<!--                        <li class="social-icon-item">-->
-<!--                            <a href="#" class="social-icon-link bi-whatsapp">-->
-<!--                            </a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-
-<!--                <div class="col-lg-3 col-12 mt-4 mb-3 mt-lg-0 mb-lg-0">-->
-<!--                    <em class="text-white d-block mb-4">Contact</em>-->
-
-<!--                    <p class="d-flex mb-1">-->
-<!--                        <strong class="me-2">Phone:</strong>-->
-<!--                        <a href="tel: 305-240-9671" class="site-footer-link">-->
-<!--                            (65)-->
-<!--                            305 2409 671-->
-<!--                        </a>-->
-<!--                    </p>-->
-
-<!--                    <p class="d-flex">-->
-<!--                        <strong class="me-2">Email:</strong>-->
-
-<!--                        <a href="mailto:info@yourgmail.com" class="site-footer-link">-->
-<!--                            hello@barista.co-->
-<!--                        </a>-->
-<!--                    </p>-->
-<!--                </div>-->
-
-
-<!--                <div class="col-lg-5 col-12">-->
-<!--                    <em class="text-white d-block mb-4">Opening Hours.</em>-->
-
-<!--                    <ul class="opening-hours-list">-->
-<!--                        <li class="d-flex">-->
-<!--                            Monday - Friday-->
-<!--                            <span class="underline"></span>-->
-
-<!--                            <strong>9:00 - 18:00</strong>-->
-<!--                        </li>-->
-
-<!--                        <li class="d-flex">-->
-<!--                            Saturday-->
-<!--                            <span class="underline"></span>-->
-
-<!--                            <strong>11:00 - 16:30</strong>-->
-<!--                        </li>-->
-
-<!--                        <li class="d-flex">-->
-<!--                            Sunday-->
-<!--                            <span class="underline"></span>-->
-
-<!--                            <strong>Closed</strong>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </div>-->
-
                 <div class="col-lg-12 col-12 mt-4 text-center">
                     <p class="copyright-text mb-0">See you again
                         - Design: <a rel="sponsored" href="https://www.facebook.com/botombotomro" target="_blank">@thienpt</a></p>
                 </div>
-<!--            </div>-->
+            </div>
         </div>
     </footer>
 </main>
@@ -444,6 +459,14 @@
             prevEl: ".swiper-button-prev",
         },
     });
+    function showHideQrCode(){
+        var checkHidden = $('#qrCode').attr('hidden')
+        if(checkHidden){
+            $('#qrCode').removeAttr('hidden')
+        }else{
+            $('#qrCode').attr('hidden','hidden')
+        }
+    }
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
 </body>
