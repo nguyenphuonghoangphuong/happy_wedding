@@ -623,7 +623,7 @@ strong {
 }
 
 .about-video-info {
-  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.2), rgb(34 34 33));
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.01), rgb(34 34 33));
   border-radius: var(--border-radius-medium);
   bottom: 0;
   height: auto;
