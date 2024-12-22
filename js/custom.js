@@ -8,15 +8,28 @@
     });
 
     $(function () {
-        $('.hero-slides').vegas({
-            slides: [
-                {src: 'images/slides/anh-cuoi-1.jpg'},
-                {src: 'images/slides/anh-cuoi-2.jpg'},
-                {src: 'images/slides/anh-cuoi-3.jpg'}
-            ],
-            timer: false,
-            animation: 'kenburns',
-        });
+        var screenWidth = $(window).width();
+        if (screenWidth < 1000) {
+            $('.hero-slides').vegas({
+                slides: [
+                    {src: 'images/slides/anh-cuoi-1.jpg'},
+                    {src: 'images/slides/anh-cuoi-2.jpg'},
+                    {src: 'images/slides/anh-cuoi-3.jpg'}
+                ],
+                timer: false,
+                animation: 'kenburns',
+            });
+        } else {
+            $('.hero-slides').vegas({
+                slides: [
+                    {src: 'images/slides/anh-cuoi-1-web.jpg'},
+                    {src: 'images/slides/anh-cuoi-2-web.jpg'},
+                    {src: 'images/slides/anh-cuoi-3-web.jpg'}
+                ],
+                timer: false,
+                animation: 'kenburns',
+            });
+        }
     });
 
     // CUSTOM LINK
@@ -38,7 +51,7 @@
             }, 300);
         }
     });
-    var words = ['Happy Wedding', 'Đức Hòa - Mỹ Hoa'],
+    var words = ['Happy Wedding', 'Hoàng Phương - Nguyễn Phương'],
         part,
         i = 0,
         offset = 0,
